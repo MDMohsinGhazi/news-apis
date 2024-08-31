@@ -4,6 +4,7 @@
     "main": "./src/index.ts",
     "scripts": {
         "dev": "nodemon",
+        "build": "tsc",
         "check-types": "tsc --pretty --noEmit",
         "check-format": "prettier --check .",
         "check-lint": "eslint src/**/*.{ts,tsx,js}",
