@@ -3,6 +3,7 @@
     "version": "1.0.0",
     "main": "./src/index.ts",
     "scripts": {
+        "start": "node './dist/index.js'",
         "dev": "nodemon",
         "build": "tsc",
         "check-types": "tsc --pretty --noEmit",

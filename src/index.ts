@@ -6,7 +6,8 @@ import compression from 'compression';
 import cors from 'cors';
 import dotenv from 'dotenv';
 import routes from './api';
-import { errorHandler, ErrorResponse } from './middlewares/Error';
+import { ErrorResponse } from './utils/ErrorResponse';
+import { errorHandler } from './middlewares/errorHandler';
 import { NextFunction } from 'http-proxy-middleware/dist/types';
 
 dotenv.config();
@@ -26,7 +27,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use('/api/v1', routes);
 
-app.get('/api/v_1/health', async (req: Request, res: Response) => {
+app.get('/api/health', async (req: Request, res: Response) => {
     res.status(200).send({ message: 'health OK!' });
 });
 
